@@ -1,27 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&display=swap");
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+:root {
+  --brand-yellow: #e5b041;
+  --overlay: rgba(0, 0, 0, 0.45);
+  --bg: #fff;
+  --card: #e9ac3c;
+  --card-alt: #ececdc;
+  --text: #333;
+  --btn: #d87b16;
+  --btn-hover: #b9650f;
 }
-
-body {
-  background-color: #fff;
-  overflow-x: hidden; /* impede scroll horizontal */
-}
-
-/* Chrome, Edge, Safari */
-body::-webkit-scrollbar {
-  width: 0;
-  height: 0;
-}
-
-/* Firefox */
-body {
-  scrollbar-width: none; /* Firefox */
-}
-
 
 * {
   margin: 0;
@@ -30,9 +18,19 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-:root {
-  --brand-yellow: #e5b041;
-  --overlay: rgba(0, 0, 0, 0.45);
+body {
+  margin: 0;
+  padding: 2rem 0 4rem;
+  background: var(--bg);
+  color: var(--text);
+  text-align: center;
+  overflow-x: hidden;
+  scrollbar-width: none; /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }
 
 /* ---------- HERO -------------------------------------------------- */
@@ -98,7 +96,6 @@ h1 {
     opacity: 1;
   }
 }
-
 @media (max-width: 600px) {
   .hero .content {
     padding-left: 1.25rem;
@@ -121,7 +118,6 @@ h1 {
   color: #555;
   margin-bottom: 2rem;
 }
-
 .accordion {
   max-width: 800px;
   margin: 0 auto;
@@ -130,7 +126,6 @@ h1 {
 .accordion-item + .accordion-item {
   border-top: 1px solid #ccc;
 }
-
 .accordion-header {
   width: 100%;
   display: flex;
@@ -159,7 +154,6 @@ h1 {
 .accordion-header.active .icon {
   transform: rotate(180deg);
 }
-
 .accordion-content {
   max-height: 0;
   overflow: hidden;
@@ -172,35 +166,7 @@ h1 {
   border-radius: 8px;
 }
 
-/* CSS CALCULADORA*/
-/*  esquema de cores simples, inspirei‑me no laranja da tua captura */
-:root {
-  --bg: #fff;
-  --card: #e9ac3c;
-  --card-alt: #ececdc;
-  --text: #333;
-  --btn: #d87b16;
-  --btn-hover: #b9650f;
-}
-
-* {
-  box-sizing: border-box;
-  font-family: Inter, Arial, Helvetica, sans-serif;
-}
-
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  padding: 2rem 1rem 4rem;
-  text-align: center;
-}
-
-h1 {
-  margin-bottom: 2rem;
-  font-size: clamp(1.8rem, 5vw, 3rem);
-}
-
+/* ---------- CALCULADORA ---------------------------------------- */
 .wrapper {
   display: flex;
   gap: 2rem;
@@ -243,7 +209,6 @@ input {
   font-size: 1rem;
 }
 
-/* botão  */
 button {
   margin-top: 1rem;
   padding: 0.7rem 2.2rem;
