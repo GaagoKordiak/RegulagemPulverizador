@@ -243,3 +243,7 @@ button:hover {
 span:empty::after {
   content: "—";
 }
+
+h1 + .wrapper {
+  margin-top: 2rem; /* você pode ajustar pra 3rem ou mais se quiser mais espaço */
+}
