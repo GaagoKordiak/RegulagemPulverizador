@@ -234,6 +234,44 @@
         <button data-action="rate">Calcular</button>
         <p class="result">Taxa: <span id="rate-res"></span> L/ha</p>
       </div>
+
+      <!-- Volume de Calda ========================================== -->
+      <div class="card" id="mix-vol-card">
+        <h2>Volume de Calda</h2>
+        <p>Calcular o volume total (L)<br />necessário para aplicar</p>
+
+        <label>
+          Área a ser aplicada (ha)
+          <input type="number" id="area-vol" />
+        </label>
+
+        <label>
+          Taxa de aplicação (L/ha)
+          <input type="number" id="rate-vol" />
+        </label>
+
+        <button data-action="mix-vol">Calcular</button>
+        <p class="result">Volume: <span id="mix-vol-res"></span> L</p>
+      </div>
+
+      <!-- Área total =============================================== -->
+      <div class="card" id="total-area-card">
+        <h2>Área total</h2>
+        <p>Calcular a área (ha)<br />a partir de largura e comprimento</p>
+
+        <label>
+          Largura (m)
+          <input type="number" id="width" />
+        </label>
+
+        <label>
+          Comprimento (m)
+          <input type="number" id="length" />
+        </label>
+
+        <button data-action="total-area">Calcular</button>
+        <p class="result">Área: <span id="total-area-res"></span> ha</p>
+      </div>
     </section>
 
     <!-- JS Calculadora -->

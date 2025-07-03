@@ -15,6 +15,8 @@ document.addEventListener("click", (e) => {
   if (action === "flow") calcFlow();
   if (action === "pressure") calcPressure();
   if (action === "rate") calcRate();
+  if (action === "mix-vol") calcMixVolume();
+  if (action === "total-area") calcTotalArea();
 });
 
 // 1) Vazão requerida (L/min)
@@ -53,4 +55,26 @@ function calcRate() {
 
   const rate = (K * q) / (v * s);
   $("#rate-res").textContent = round(rate);
+}
+
+// 4) Volume de Calda (L)
+function calcMixVolume() {
+  const area = +$("#area-vol").value;
+  const rate = +$("#rate-vol").value;
+
+  if (!area || !rate) return;
+
+  const volume = area * rate;
+  $("#mix-vol-res").textContent = round(volume);
+}
+
+// 5) Área total (ha)
+function calcTotalArea() {
+  const width = +$("#width").value;
+  const length = +$("#length").value;
+
+  if (!width || !length) return;
+
+  const area = (width * length) / 10000; // converte m² pra ha
+  $("#total-area-res").textContent = round(area);
 }
