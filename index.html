@@ -5,16 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pulverização Agrícola</title>
 
-    <!-- Fontes -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&display=swap"
       rel="stylesheet"
     />
-    <!-- CSS externo -->
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- HERO ---------------------------------------------------- -->
     <section class="hero">
       <div class="content">
         <p class="pre-title">Aprenda a regular seu pulverizador</p>
@@ -30,13 +32,11 @@
       </div>
     </section>
 
-    <!-- ACCORDION ------------------------------------------------ -->
     <section class="accordion-section">
       <h2>Aprenda a regular seu pulverizador</h2>
       <p>Selecione o vídeo e tire suas dúvidas</p>
 
       <div class="accordion">
-        <!-- item 1 -->
         <div class="accordion-item">
           <button class="accordion-header">
             Principais componentes do pulverizador
@@ -51,7 +51,6 @@
           </div>
         </div>
 
-        <!-- item 2 -->
         <div class="accordion-item">
           <button class="accordion-header">
             Check‑list antes de pulverizar
@@ -66,7 +65,6 @@
           </div>
         </div>
 
-        <!-- item 3 -->
         <div class="accordion-item">
           <button class="accordion-header">
             Como calcular o volume de calda necessário
@@ -81,7 +79,6 @@
           </div>
         </div>
 
-        <!-- item 4 -->
         <div class="accordion-item">
           <button class="accordion-header">
             Como calibrar o pulverizador - passo a passo
@@ -92,11 +89,62 @@
               src="https://www.youtube.com/embed/AQY0Fz_aCHk"
               frameborder="0"
               allowfullscreen
-            ></iframe>
+            >
+            </iframe>
+            <button class="info-toggle" id="info-video-btn">
+              --- <span class="material-icons">info</span> ---
+            </button>
+            <div class="info-box">
+              <p>
+                <b>✅ Passo a passo para regular um pulverizador</b><br />
+                1. 📏 Meça com uma trena uma distância de 50 metros em linha
+                reta, em terreno representativo da área de trabalho.<br />
+                2. 🚩 Coloque duas bandeiras ou estacas marcando o início e o
+                fim da distância.<br />
+                3. 🚜 Posicione o trator no ponto inicial.<br />
+                4. ⚙️ Engate a marcha e ajuste a rotação do motor na condição
+                exata de trabalho (mesmo que será usada na aplicação).<br />
+                5. ⏱️ Com o auxílio de um cronômetro, meça quanto tempo o trator
+                leva para percorrer os 50 metros na marcha e rotação
+                definidas.<br />
+                6. 🧪 Com o trator parado, mas com o motor na mesma rotação de
+                trabalho, abra as barras do pulverizador, ligue o sistema, e
+                colete com um copo medidor a vazão de uma ponta durante o mesmo
+                tempo cronometrado no item anterior.<br />
+                7. 🔢 Use nossa calculadora de velocidade para converter os
+                dados de distância e tempo para a velocidade em km/h.<br />
+                8. 📜 Consulte a bula do defensivo agrícola para verificar a
+                taxa de aplicação recomendada (em L/ha).<br />
+                9. 💧 Com esses dados em mãos, use nossa calculadora de vazão
+                para descobrir a vazão ideal por ponta para atingir essa
+                taxa.<br />
+                10. 🔍 Verifique se a ponta utilizada entrega a vazão necessária
+                e se está dentro da faixa adequada de tamanho de gotas, conforme
+                o alvo (inseto, fungo, etc).<br />
+                11. 🎯 Se a vazão estiver fora do desejado, utilize nossa
+                calculadora de pressão para ajustar a pressão e tentar atingir a
+                vazão ideal sem trocar a ponta.<br />
+                12. ✅ Refaça a medição da vazão com o copo medidor e
+                cronômetro, e utilize nossa calculadora de taxa de aplicação
+                para confirmar se a ponta está aplicando o volume correto de
+                calda.<br />
+                13. 🔄 Se necessário, ajuste novamente a pressão do pulverizador
+                até que a taxa de aplicação final esteja de acordo com a
+                recomendação da bula.<br /><br />
+                <b>🔁 Dicas finais</b><br />
+                ✅ Repita os passos quantas vezes forem necessárias até atingir
+                uma taxa de aplicação satisfatória.<br />
+                📘 Sempre consulte a tabela do fabricante da ponta para garantir
+                precisão nas faixas de vazão e pressão.<br />
+                🧼 Antes de iniciar qualquer regulagem, realize a limpeza dos
+                filtros, mangueiras, peneiras e pontas do pulverizador.<br />
+                🧠 Lembre-se: pulverização mal regulada = desperdício + risco
+                ambiental + baixa eficácia.
+              </p>
+            </div>
           </div>
         </div>
 
-        <!-- item 5 -->
         <div class="accordion-item">
           <button class="accordion-header">
             Tipos de pontas e tamanho de gotas
@@ -111,7 +159,6 @@
           </div>
         </div>
 
-        <!-- item 6 -->
         <div class="accordion-item">
           <button class="accordion-header">
             Cuidado! Erros comuns na pulverização
@@ -126,7 +173,6 @@
           </div>
         </div>
 
-        <!-- item 7 -->
         <div class="accordion-item">
           <button class="accordion-header">
             Dicas para reduzir o desperdício na pulverização
@@ -141,7 +187,6 @@
           </div>
         </div>
 
-        <!-- item 8 -->
         <div class="accordion-item">
           <button class="accordion-header">
             Cuidados com a manutenção e sistema do trator
@@ -161,31 +206,163 @@
     <h1>Calculadora de pulverização</h1>
 
     <section class="wrapper">
-      <!-- Vazão   ===================================================== -->
+      <div class="card" id="speed-card">
+        <h2>Velocidade</h2>
+        <p>Converter m/s → km/h<br />para usar nas outras contas</p>
+
+        <label>
+          Distância percorrida (m)
+          <input type="number" id="dist-m" />
+        </label>
+
+        <label>
+          Tempo (s)
+          <input type="number" id="time-s" />
+        </label>
+
+        <button data-action="speed">Calcular</button>
+        <p class="result">Velocidade: <span id="speed-res"></span> km/h</p>
+
+        <button class="info-toggle">
+          --- <span class="material-icons">info</span> ---
+        </button>
+
+        <div class="info-box">
+          <p>
+            📌 <strong>Fórmula para converter m/s em km/h:</strong><br />
+            <code> Velocidade (km/h) = (Distância (m) ÷ Tempo (s)) × 3,6 </code>
+            <br /><br />
+            Por quê? 1 m/s = 3,6 km/h (fator de conversão).<br /><br />
+            🧠 <strong>Como usar:</strong><br />
+            Meça 50 m, cronometre o tempo em segundos e lance aqui.<br />
+            O resultado em km/h serve direto para as outras calculadoras.<br /><br />
+            <em>Source: Conversão SI padrão (NIST)</em>
+          </p>
+        </div>
+      </div>
+
+      <div class="card" id="volume-time-flow-card">
+        <h2>Volume/Tempo → Vazão</h2>
+        <p>
+          Calcular vazão (L/min) a partir de<br />volume (ml) e tempo (segundos)
+        </p>
+
+        <label>
+          Volume Coletado (ml)
+          <input type="number" id="volume-ml" step="1" />
+        </label>
+
+        <label>
+          Tempo de Coleta (s)
+          <input type="number" id="time-s-flow" step="0.1" />
+        </label>
+
+        <button data-action="calculate-volume-time-flow">Calcular</button>
+        <p class="result">
+          Vazão: <span id="flow-lpm-volume-time-res"></span> L/min
+        </p>
+
+        <button class="info-toggle">
+          --- <span class="material-icons">info</span> ---
+        </button>
+
+        <div class="info-box">
+          <p>
+            📌
+            <strong
+              >Fórmula para calcular a vazão (L/min) a partir de volume e
+              tempo:</strong
+            ><br />
+            <code>
+              Vazão (L/min) = (Volume Coletado (ml) ÷ Tempo de Coleta (s)) × (60
+              ÷ 1000)
+            </code>
+            <br /><br />
+            Ou, simplificando:<br />
+            <code>
+              Vazão (L/min) = (Volume Coletado (ml) × 0.06) ÷ Tempo de Coleta
+              (s)
+            </code>
+            <br /><br />
+            Por quê?<br />
+            - Para converter segundos para minutos: multiplique por 60.<br />
+            - Para converter mililitros para litros: divida por 1000.<br /><br />
+            🧠 <strong>Como usar:</strong><br />
+            Esta calculadora é útil para aferir a vazão real de uma ponta. Colete
+            o volume de líquido em mililitros de uma ponta por um determinado
+            tempo em segundos e insira os valores aqui para obter a vazão em
+            litros por minuto.
+          </p>
+        </div>
+      </div>
+
       <div class="card" id="flow-card">
         <h2>Vazão</h2>
         <p>Calcular a vazão (L/min) da ponta<br />para escolher o modelo</p>
 
-        <label
-          >Taxa de aplicação (L/ha)
+        <label>
+          Taxa de aplicação (L/ha)
           <input type="number" id="rate-ha" />
         </label>
 
-        <label
-          >Velocidade (km/h)
+        <label>
+          Velocidade (km/h)
           <input type="number" id="speed" />
         </label>
 
-        <label
-          >Espaçamento da ponta (cm)
-          <input type="number" id="spacing" />
+        <label>
+          Largura da barra (m)
+          <input type="number" id="bar-width" />
+        </label>
+
+        <label>
+          Número de pontas
+          <input type="number" id="nozzles" />
         </label>
 
         <button data-action="flow">Calcular</button>
         <p class="result">Vazão: <span id="flow-res"></span> L/min</p>
+
+        <button class="info-toggle">
+          --- <span class="material-icons">info</span> ---
+        </button>
+
+        <div class="info-box">
+          <p>
+            📌 <strong>Fórmula para calcular a vazão por ponta (Q):</strong
+            ><br />
+            <code>
+              Q = (Taxa × Velocidade × Largura da barra) ÷ (600 × Nº de pontas)
+            </code>
+            <br /><br />
+            Onde:<br />
+            - <strong>Q</strong> = vazão por ponta (L/min)<br />
+            - <strong>Taxa</strong> = volume aplicado por hectare (L/ha)<br />
+            - <strong>Velocidade</strong> = velocidade de aplicação (km/h)<br />
+            - <strong>Largura da barra</strong> = largura total da barra de
+            aplicação (m)<br />
+            - <strong>Nº de pontas</strong> = quantidade total de pontas na
+            barra <br /><br />
+            🧠 <strong>Como interpretar:</strong><br />
+            Essa fórmula calcula quanto líquido cada ponta deve liberar por
+            minuto para garantir que, andando na velocidade e cobrindo a largura
+            especificadas, a taxa de aplicação desejada seja atingida.<br />
+            <br />
+            ⚠️ O fator 600 serve para ajustar as unidades e converter o
+            resultado para litros por minuto.<br />
+            <br />
+            <em
+              >Source:
+              <a
+                href="https://ainfo.cnptia.embrapa.br/digital/bitstream/item/71845/1/Circular-79.pdf"
+                target="_blank"
+                >EMBRAPA - Circular 79</a
+              ></em
+            >
+          </p>
+        </div>
       </div>
 
-      <!-- Pressão   ==================================================== -->
       <div class="card" id="pressure-card">
         <h2>Pressão</h2>
         <p>Calcular a pressão necessária<br />para atingir a vazão</p>
@@ -209,33 +386,99 @@
         <p class="result">
           Pressão: <span id="p-psi"></span> psi | <span id="p-bar"></span> bar
         </p>
+
+        <button class="info-toggle">
+          --- <span class="material-icons">info</span> ---
+        </button>
+
+        <div class="info-box">
+          <p>
+            ⚙️ Fórmula usada:<br />
+            <code> P₂ = P₁ × (Q₂ ÷ Q₁)² </code><br />
+            Onde:<br />
+            - <strong>P₁</strong> = pressão nominal (psi)<br />
+            - <strong>Q₁</strong> = vazão nominal (L/min)<br />
+            - <strong>Q₂</strong> = vazão desejada (L/min)<br />
+            - <strong>P₂</strong> = nova pressão necessária (psi) <br /><br />
+            🧮 Conversão:<br />
+            <code>bar = psi × 0,06895</code>
+            <br /><br />
+            🧠 Por que essa fórmula?<br />
+            Porque em pulverizadores hidráulicos, a
+            <strong>vazão é proporcional à raiz quadrada da pressão</strong
+            >.<br />
+            Isso significa que, se você quiser <em>dobrar</em> a vazão, terá que
+            <strong>quadruplicar</strong> a pressão. <br /><br />
+            ⚠️ Essa fórmula assume que a densidade do líquido e o modelo da
+            ponta de pulverização permanecem constantes.
+            <br /><br />
+            <em
+              >Source: Hidráulica agrícola clássica – UFLA, Sprayers101.org</em
+            >
+          </p>
+        </div>
       </div>
 
-      <!-- Taxa de aplicação   ========================================== -->
       <div class="card" id="rate-card">
         <h2>Taxa de Aplicação</h2>
         <p>Calcular o volume (L/ha)<br />aplicado por hectare</p>
 
-        <label
-          >Vazão (L/min)
-          <input type="number" id="q" />
+        <label>
+          Nº de pontas
+          <input type="number" id="bicos" />
         </label>
 
-        <label
-          >Velocidade (km/h)
-          <input type="number" id="v-app" />
+        <label>
+          Vazão por ponta (L/min)
+          <input type="number" id="qBico" step="0.01" />
         </label>
 
-        <label
-          >Espaçamento da ponta (cm)
-          <input type="number" id="s-app" />
+        <label>
+          Velocidade (km/h)
+          <input type="number" id="vel" step="0.1" />
         </label>
 
-        <button data-action="rate">Calcular</button>
-        <p class="result">Taxa: <span id="rate-res"></span> L/ha</p>
+        <label>
+          Largura da barra (m)
+          <input type="number" id="larg" step="0.1" />
+        </label>
+
+        <button onclick="calcularTaxa()">Calcular</button>
+        <p class="result">Taxa: <span id="taxa-res"></span> L/ha</p>
+
+        <button class="info-toggle">
+          --- <span class="material-icons">info</span> ---
+        </button>
+
+        <div class="info-box">
+          <p>
+            📌 <strong>Fórmula para calcular a taxa de aplicação (L/ha):</strong
+            ><br />
+            <code>
+              Taxa (L/ha) = (Vazão total (L/min) × 600) ÷ (Velocidade (km/h) ×
+              Largura da barra (m))
+            </code>
+            <br /><br />
+            Onde:<br />
+            - <strong>Vazão total</strong> = número de pontas × vazão por ponta
+            (L/min)<br />
+            - <strong>Velocidade</strong> = velocidade de aplicação (km/h)<br />
+            - <strong>Largura da barra</strong> = largura total da barra de
+            aplicação (m) <br /><br />
+            🧠 <strong>Como interpretar:</strong><br />
+            Essa fórmula calcula o volume de líquido aplicado por hectare
+            considerando a vazão combinada de todas as pontas, a velocidade e a
+            largura da barra, garantindo a dosagem correta para a área
+            pulverizada.<br />
+            <br />
+            ⚠️ O fator 600 é usado para ajustar unidades e garantir que o
+            resultado esteja em litros por hectare.<br />
+            <br />
+            <em>Source: Manual de Pulverização – UFLA</em>
+          </p>
+        </div>
       </div>
 
-      <!-- Volume de Calda ========================================== -->
       <div class="card" id="mix-vol-card">
         <h2>Volume de Calda</h2>
         <p>Calcular o volume total (L)<br />necessário para aplicar</p>
@@ -252,9 +495,34 @@
 
         <button data-action="mix-vol">Calcular</button>
         <p class="result">Volume: <span id="mix-vol-res"></span> L</p>
+
+        <button class="info-toggle">
+          --- <span class="material-icons">info</span> ---
+        </button>
+
+        <div class="info-box">
+          <p>
+            📌 <strong>Fórmula para calcular o volume total aplicado:</strong
+            ><br />
+            <code> Volume = Área × Taxa de aplicação </code>
+            <br /><br />
+            Onde:<br />
+            - <strong>Volume</strong> = quantidade total de produto aplicado
+            (litros)<br />
+            - <strong>Área</strong> = área pulverizada (hectares)<br />
+            - <strong>Taxa de aplicação</strong> = volume aplicado por hectare
+            (L/ha) <br /><br />
+            🧠 <strong>Como interpretar:</strong><br />
+            Essa fórmula indica que o volume total aplicado é o resultado da
+            multiplicação da área coberta pela taxa de aplicação, permitindo
+            calcular a quantidade total de produto necessária para a
+            pulverização.<br />
+            <br />
+            <em>Source: Embrapa</em>
+          </p>
+        </div>
       </div>
 
-      <!-- Área total =============================================== -->
       <div class="card" id="total-area-card">
         <h2>Área total</h2>
         <p>Calcular a área (ha)<br />a partir de largura e comprimento</p>
@@ -271,13 +539,35 @@
 
         <button data-action="total-area">Calcular</button>
         <p class="result">Área: <span id="total-area-res"></span> ha</p>
+
+        <button class="info-toggle">
+          --- <span class="material-icons">info</span> ---
+        </button>
+
+        <div class="info-box">
+          <p>
+            📌 <strong>Fórmula para calcular a área em hectares:</strong><br />
+            <code> Área (ha) = (Largura (m) × Comprimento (m)) ÷ 10.000 </code>
+            <br /><br />
+            Onde:<br />
+            - <strong>Largura</strong> = largura da área em metros<br />
+            - <strong>Comprimento</strong> = comprimento da área em metros<br />
+            - O divisor 10.000 converte metros quadrados em hectares (1 ha =
+            10.000 m²)
+            <br /><br />
+            🧠 <strong>Como interpretar:</strong><br />
+            Multiplicando largura e comprimento, você obtém a área em metros
+            quadrados. Dividindo por 10.000, converte essa área para hectares,
+            unidade padrão para área agrícola.
+            <br /><br />
+            <em>Source: Matemática básica agrícola</em>
+          </p>
+        </div>
       </div>
     </section>
 
-    <!-- JS Calculadora -->
     <script src="calculators.js"></script>
 
-    <!-- JS externo -->
     <script src="script.js" defer></script>
   </body>
 </html>

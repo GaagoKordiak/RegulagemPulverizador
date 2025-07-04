@@ -8,7 +8,7 @@
   --card: #e9ac3c;
   --card-alt: #ececdc;
   --text: #333;
-  --btn: #d87b16;
+  --btn: #d97b17;
   --btn-hover: #b9650f;
 }
 
@@ -246,4 +246,73 @@ span:empty::after {
 
 h1 + .wrapper {
   margin-top: 2rem; /* você pode ajustar pra 3rem ou mais se quiser mais espaço */
+}
+
+.info-toggle {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.info-box {
+  display: none;
+  margin-top: 0.8rem;
+  font-size: 0.85rem;
+  background: var(--card-alt);
+  padding: 0.8rem;
+  border-radius: 0.6rem;
+  text-align: left;
+  color: #333;
+}
+
+.info-box code {
+  font-family: monospace;
+  color: #000;
+}
+
+.info-box a {
+  color: #0645ad;
+  text-decoration: underline;
+}
+
+/* No seu style.css, adicione isso ao final, por exemplo */
+
+
+
+
+/* Estilos específicos para o botão de informações do vídeo */
+#info-video-btn {
+  background-color: #d97b17; /* Um verde, por exemplo. Você pode escolher a cor que quiser */
+  color: white; /* Cor do texto */
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  /* Para centralizar */
+  display: block; /* Garante que o botão ocupe sua própria linha */
+  margin: 1rem auto; /* 1rem de margem superior e inferior, 'auto' para centralizar horizontalmente */
+  width: fit-content; /* Faz o botão ter a largura do seu conteúdo para que 'margin: auto' funcione */
+  transition: background-color 0.3s ease; /* Transição suave para o hover */
+}
+
+#info-video-btn:hover {
+  background-color: #b9650f; /* Um tom um pouco mais escuro ao passar o mouse */
+}
+
+/* Opcional: Ajustar o ícone de informações dentro deste botão, se necessário */
+#info-video-btn .material-icons {
+  /* Pode adicionar estilos aqui para o ícone se quiser,
+     mas o padrão já deve estar bom se não foi alterado globalmente. */
+}
+
+/* Para garantir que o texto "---" do botão específico não apareça */
+#info-video-btn {
+  font-size: 0; /* Oculta o texto "---" */
+  line-height: 0; /* Ajusta a linha para o ícone */
+}
+
+#info-video-btn .material-icons {
+  font-size: 1.3rem; /* Tamanho original do ícone */
+  margin: 0; /* Remove margem extra se houver */
 }

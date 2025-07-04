@@ -32,3 +32,23 @@ const heroObserver = new IntersectionObserver(
   { threshold: 0.4 }
 );
 heroObserver.observe(document.querySelector(".hero"));
+
+document.querySelectorAll(".info-toggle").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const info = btn.nextElementSibling;
+    const isCurrentlyHidden = info.style.display === "none" || info.style.display === ""; // Verifica se está oculto ou não definido
+
+    info.style.display = isCurrentlyHidden ? "block" : "none";
+
+    // Verifica se a info-box está dentro de um accordion-content
+    let currentParent = btn.parentElement;
+    while (currentParent) {
+      if (currentParent.classList.contains("accordion-content")) {
+        // Encontrou o accordion-content, ajusta seu maxHeight
+        currentParent.style.maxHeight = currentParent.scrollHeight + "px";
+        break; // Para de procurar
+      }
+      currentParent = currentParent.parentElement;
+    }
+  });
+});
